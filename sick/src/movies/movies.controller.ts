@@ -6,6 +6,7 @@ import {
   Delete,
   Patch,
   Body,
+  Query,
 } from '@nestjs/common';
 
 @Controller('movies')
@@ -13,6 +14,11 @@ export class MoviesController {
   @Get()
   getAll() {
     return 'this will return all movies';
+  }
+
+  @Get('/search')
+  search(@Query('year') searchingYear) {
+    return `we are serching for a movie mate after: ${searchingYear}`;
   }
 
   @Get('/:id')
