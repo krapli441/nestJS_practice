@@ -13,16 +13,15 @@ export class MoviesService {
     return this.movies.find((movie) => movie.id === +id);
   }
 
-  deleteOne(id:string):boolean {
-    this.movies.filter(movie => movie.id !== +id)
+  deleteOne(id: string): boolean {
+    this.movies.filter((movie) => movie.id !== +id);
     return true;
   }
 
-  create(movieData){
+  create(movieData) {
     this.movies.push({
-      id: this.movies.length +1,
-      ...movieData
-    })
+      id: this.movies.length + 1,
+      ...movieData,
+    });
   }
-
 }
