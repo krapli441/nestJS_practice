@@ -1,4 +1,14 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 
 @Controller('movies')
-export class MoviesController {}
+export class MoviesController {
+  @Get()
+  getAll() {
+    return 'this will return all movies';
+  }
+
+  @Get('/:id')
+  getOne() {
+    return 'this will return one movie';
+  }
+}
